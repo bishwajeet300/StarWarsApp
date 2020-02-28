@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/starshipFragment">
+
+    <fragment
+        android:id="@+id/starshipFragment"
+        android:name="com.bishwajeet.starwarsapp.view.fragmentStarship.StarshipFragment"
+        android:label="fragment_starship"
+        tools:layout="@layout/fragment_starship">
+        <action
+            android:id="@+id/toStarshipDetails"
+            app:destination="@id/starshipDetailFragment" />
+        <action
+            android:id="@+id/starshipToSettings"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/starshipToPilotFragment"
+            app:destination="@id/pilotFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pilotFragment"
+        android:name="com.bishwajeet.starwarsapp.view.fragmentPilot.PilotFragment"
+        android:label="fragment_pilot"
+        tools:layout="@layout/fragment_pilot">
+        <action
+            android:id="@+id/toPilotDetails"
+            app:destination="@id/pilotDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.bishwajeet.starwarsapp.view.fragmentSettings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/starshipDetailFragment"
+        android:name="com.bishwajeet.starwarsapp.view.fragmentStarship.StarshipDetailFragment"
+        android:label="fragment_starship_detail"
+        tools:layout="@layout/fragment_starship_detail">
+        <action
+            android:id="@+id/starshipDetailToPilot"
+            app:destination="@id/pilotDetailsFragment" />
+        <argument
+            android:name="STARSHIP_ID"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/pilotDetailsFragment"
+        android:name="com.bishwajeet.starwarsapp.view.fragmentPilot.PilotDetailsFragment"
+        android:label="fragment_pilot_details"
+        tools:layout="@layout/fragment_pilot_details">
+        <action
+            android:id="@+id/pilotDetailToStarship"
+            app:destination="@id/starshipDetailFragment" />
+        <argument
+            android:name="PILOT_ID"
+            app:argType="string" />
+    </fragment>
+</navigation>
