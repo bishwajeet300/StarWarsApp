@@ -1,37 +1,48 @@
 package com.bishwajeet.starwarsapp.view.fragmentStarship
 
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.bishwajeet.starwarsapp.R
+import com.bishwajeet.starwarsapp.StarWarsApp
+import com.bishwajeet.starwarsapp.di.StarWarsViewModelFactory
 import kotlinx.android.synthetic.main.fragment_starship.*
+import javax.inject.Inject
 
-/**
- * A simple [Fragment] subclass.
- */
 class StarshipFragment : Fragment() {
 
-    private lateinit var viewModel: StarshipViewModel
-    private lateinit var viewModelFactory: StarshipViewModelFactory
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+
+    private val viewModel by viewModels<StarshipViewModel> {
+        viewModelFactory
+    }
+
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        (requireActivity().application as StarWarsApp).applicationComponent.StarshipComponent.starshipComponent.create()
+            .inject(this)
+    }
+
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
         Log.i("StarshipFragment", "Called ViewModelProviders.of")
 
-        viewModelFactory = StarshipViewModelFactory()
-
-        viewModel = ViewModelProvider(this, viewModelFactory).get(StarshipViewModel::class.java)
-
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_starship, container, false)
     }
 

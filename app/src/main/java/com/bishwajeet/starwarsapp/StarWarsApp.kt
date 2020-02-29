@@ -1,4 +1,9 @@
 package com.bishwajeet.starwarsapp
 
-class StarWarsApp {
+import android.app.Application
+
+
+class StarWarsApp: Application() {
+
+    val applicationComponent = DaggerApplicationComponent().create()
 }

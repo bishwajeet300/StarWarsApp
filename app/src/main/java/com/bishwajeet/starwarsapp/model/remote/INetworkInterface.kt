@@ -41,7 +41,7 @@ interface INetworkInterface {
                 .baseUrl(BASE_URL)
                 .build()
 
-            return retrofit.create(INetworkInterface::class.java)
+            return retrofit.create(INetworkInterface::class)
         }
     }
 }

@@ -8,7 +8,7 @@ class PilotViewModelFactory: ViewModelProvider.Factory {
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        if(modelClass.isAssignableFrom(PilotViewModel::class.java)) {
+        if(modelClass.isAssignableFrom(PilotViewModel::class)) {
             return PilotViewModel() as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")

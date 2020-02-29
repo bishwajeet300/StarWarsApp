@@ -26,7 +26,7 @@ class PilotFragment : Fragment() {
 
         viewModelFactory = PilotViewModelFactory()
 
-        viewModel = ViewModelProvider(this, viewModelFactory).get(PilotViewModel::class.java)
+        viewModel = ViewModelProvider(this, viewModelFactory).get(PilotViewModel::class)
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_pilot, container, false)
     }

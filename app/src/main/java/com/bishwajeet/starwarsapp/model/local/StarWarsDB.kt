@@ -10,7 +10,7 @@ import com.bishwajeet.starwarsapp.model.local.entity.Pilot
 import com.bishwajeet.starwarsapp.model.local.entity.Starship
 import com.bishwajeet.starwarsapp.model.local.entity.StarshipPilotRelationship
 
-@Database(entities = [Starship::class, Pilot::class, StarshipPilotRelationship::class], version = 1)
+@Database(entities = [Starship::class, Pilot::class, StarshipPilotRelationship::class], version = 1, exportSchema = false)
 abstract class StarWarsDB: RoomDatabase() {
 
     abstract fun starshipDAO(): StarshipDAO

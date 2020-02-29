@@ -1,5 +1,6 @@
 package com.bishwajeet.starwarsapp.model.local.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Query
 import androidx.room.Transaction
@@ -10,5 +11,5 @@ interface PilotDAO {
 
     @Transaction
     @Query("SELECT * FROM TABLE_PILOT")
-    fun getPilotwithStarships(): List<PilotWithStarships>
+    suspend fun getPilotWithStarships(): LiveData<List<PilotWithStarships>>
 }
