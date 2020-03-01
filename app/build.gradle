@@ -70,7 +70,10 @@ dependencies {
 
     //Network: Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-scalars:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
+    // Retrofit Coroutines Support
+    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$retrofit_coroutines_adapter_version"
 
     //Moshi: JSON Utility
     kapt 'com.squareup.moshi:moshi-kotlin-codegen:1.6.0'

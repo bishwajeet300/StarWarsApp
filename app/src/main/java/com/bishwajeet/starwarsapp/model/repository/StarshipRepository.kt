@@ -1,14 +1,14 @@
 package com.bishwajeet.starwarsapp.model.repository
 
-import com.bishwajeet.starwarsapp.model.local.dao.StarshipDAO
-import com.bishwajeet.starwarsapp.model.remote.INetworkInterface
-import javax.inject.Inject
-import javax.inject.Singleton
+import androidx.lifecycle.LiveData
+import com.bishwajeet.starwarsapp.model.entity.Starship
+import com.bishwajeet.starwarsapp.model.entity.StarshipWithPilots
 
-@Singleton
-class StarshipRepository @Inject constructor(
-                        private val starshipDAO: StarshipDAO,
-                        private val iNetworkInterface: INetworkInterface) {
+interface StarshipRepository {
 
-    val starships = iNetworkInterface.getAllStarships(1)
+    suspend fun getStarshipList(): LiveData<MutableList<Starship>>
+
+    suspend fun getStarshipsWithPilot(): LiveData<MutableList<StarshipWithPilots>>
+
+    suspend fun getStarship(starship_id: String): LiveData<StarshipWithPilots>
 }

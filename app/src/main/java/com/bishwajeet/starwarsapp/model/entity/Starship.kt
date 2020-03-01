@@ -1,4 +1,4 @@
-package com.bishwajeet.starwarsapp.model.local.entity
+package com.bishwajeet.starwarsapp.model.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
