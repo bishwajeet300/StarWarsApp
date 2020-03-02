@@ -1,27 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.fragmentSettings.SettingsFragment">
+    android:background="@color/background_color"
+    tools:context=".view.settings.SettingsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Settings"
-        tools:layout_editor_absoluteX="46dp"
-        tools:layout_editor_absoluteY="32dp" />
-
-    <Button
-        android:id="@+id/btnToSwitchTheme"
+    <ImageView
+        android:id="@+id/ivTheme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="To starship list"
-        app:layout_constraintBottom_toBottomOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        app:srcCompat="@drawable/ic_theme"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/llThemes"
+        android:layout_alignBottom="@+id/llThemes"
+        android:padding="@dimen/padding_list_item"
+        android:contentDescription="@string/themes"/>
+
+
+    <LinearLayout
+        android:id="@+id/llThemes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_toEndOf="@+id/ivTheme">
+
+        <TextView
+            android:id="@+id/tvTheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/raleway_regular"
+            android:textSize="14sp"
+            android:text="@string/themes"/>
+
+        <TextView
+            android:id="@+id/tvCurrentTheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/raleway_regular"
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,30 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.fragmentStarship.StarshipFragment">
-
-    <!-- TODO: Update blank fragment layout -->
+    android:background="@color/background_color"
+    android:orientation="vertical"
+    tools:context=".view.starship.fragmentStarship.StarshipFragment">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvTheme"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Starship List"
-        tools:layout_editor_absoluteX="46dp"
-        tools:layout_editor_absoluteY="32dp" />
-
-    <Button
-        android:id="@+id/btnToStarshipDetail"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="To starship detail"
-        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        android:fontFamily="@font/raleway_regular"
+        android:padding="@dimen/padding_list_item"
+        android:textAlignment="center"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvStarships"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTheme" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

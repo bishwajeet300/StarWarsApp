@@ -7,8 +7,8 @@
 
     <fragment
         android:id="@+id/starshipFragment"
-        android:name="com.bishwajeet.starwarsapp.view.fragmentStarship.StarshipFragment"
-        android:label="fragment_starship"
+        android:name="com.bishwajeet.starwarsapp.view.starship.fragmentStarship.StarshipFragment"
+        android:label="@string/starships"
         tools:layout="@layout/fragment_starship">
         <action
             android:id="@+id/toStarshipDetails"
@@ -22,8 +22,8 @@
     </fragment>
     <fragment
         android:id="@+id/pilotFragment"
-        android:name="com.bishwajeet.starwarsapp.view.fragmentPilot.PilotFragment"
-        android:label="fragment_pilot"
+        android:name="com.bishwajeet.starwarsapp.view.pilot.fragmentPilot.PilotFragment"
+        android:label="@string/pilots"
         tools:layout="@layout/fragment_pilot">
         <action
             android:id="@+id/toPilotDetails"
@@ -31,13 +31,13 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.bishwajeet.starwarsapp.view.fragmentSettings.SettingsFragment"
-        android:label="fragment_settings"
+        android:name="com.bishwajeet.starwarsapp.view.settings.SettingsFragment"
+        android:label="@string/settings"
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/starshipDetailFragment"
-        android:name="com.bishwajeet.starwarsapp.view.fragmentStarship.StarshipDetailFragment"
-        android:label="fragment_starship_detail"
+        android:name="com.bishwajeet.starwarsapp.view.starship.fragmentStarshipDetail.StarshipDetailFragment"
+        android:label="@string/starship_details"
         tools:layout="@layout/fragment_starship_detail">
         <action
             android:id="@+id/starshipDetailToPilot"
@@ -48,8 +48,8 @@
     </fragment>
     <fragment
         android:id="@+id/pilotDetailsFragment"
-        android:name="com.bishwajeet.starwarsapp.view.fragmentPilot.PilotDetailsFragment"
-        android:label="fragment_pilot_details"
+        android:name="com.bishwajeet.starwarsapp.view.pilot.fragmentPilotDetail.PilotDetailsFragment"
+        android:label="@string/pilots_details"
         tools:layout="@layout/fragment_pilot_details">
         <action
             android:id="@+id/pilotDetailToStarship"

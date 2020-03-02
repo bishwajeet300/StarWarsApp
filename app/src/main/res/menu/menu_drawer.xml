@@ -3,13 +3,17 @@
 
     <item
         android:id="@id/starshipFragment"
-        android:title="@string/starships" />
+        android:title="@string/starships"
+        android:icon="@drawable/ic_starship"
+        android:checked="true"/>
 
     <item
         android:id="@id/pilotFragment"
-        android:title="@string/pilots" />
+        android:title="@string/pilots"
+        android:icon="@drawable/ic_pilot"/>
 
     <item
         android:id="@id/settingsFragment"
-        android:title="@string/settings" />
+        android:title="@string/settings"
+        android:icon="@drawable/ic_settings"/>
 </menu>

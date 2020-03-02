@@ -1,26 +1,41 @@
 package com.bishwajeet.starwarsapp.model.entity
 
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
 
-@Entity(tableName = "table_pilot")
+@JsonClass(generateAdapter = true)
 data class Pilot(
-
-    @PrimaryKey
-    @ColumnInfo(name = "pilot_id")
-    val url: String,
-
-    val name: String,
-    val height: String,
-    val mass: String,
-    val hair_color: String,
-    val skin_color: String,
-    val eye_color: String,
-    val birth_year: String,
-    val gender: String,
-    val homeworld: String,
-    val created: String,
-    val edited: String
+    @Json(name = "name")
+    val name: String = "",
+    @Json(name = "height")
+    val height: String = "",
+    @Json(name = "mass")
+    val mass: String = "",
+    @Json(name = "hair_color")
+    val hairColor: String = "",
+    @Json(name = "skin_color")
+    val skinColor: String = "",
+    @Json(name = "eye_color")
+    val eyeColor: String = "",
+    @Json(name = "birth_year")
+    val birthYear: String = "",
+    @Json(name = "gender")
+    val gender: String = "",
+    @Json(name = "homeworld")
+    val homeworld: String = "",
+    @Json(name = "films")
+    val films: List<String> = listOf(),
+    @Json(name = "species")
+    val species: List<String> = listOf(),
+    @Json(name = "vehicles")
+    val vehicles: List<String> = listOf(),
+    @Json(name = "starships")
+    val starships: List<String> = listOf(),
+    @Json(name = "created")
+    val created: String = "",
+    @Json(name = "edited")
+    val edited: String = "",
+    @Json(name = "url")
+    val url: String = ""
 )

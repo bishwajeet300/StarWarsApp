@@ -1,9 +1,20 @@
 <resources>
     <string name="app_name">StarWarsApp</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="starships">Starships</string>
     <string name="pilots">Pilots</string>
     <string name="settings">Settings</string>
+    <string name="pilots_details">Pilot Details</string>
+    <string name="starship_details">Starship Details</string>
+
+    <string name="light_theme_name">Force</string>
+    <string name="dark_theme_name">Dark Side</string>
+    <string name="follow_system_name">Device Theme</string>
+
+    <string name="light_theme_value" translatable="false">Light</string>
+    <string name="dark_theme_value" translatable="false">Dark</string>
+    <string name="follow_system_value" translatable="false">System</string>
+    <string name="themes">Themes</string>
+    <string name="choose_theme">Choose Theme</string>
+    <string name="no_starships">No Starships</string>
+    <string name="no_pilots">No Pilots</string>
 </resources>

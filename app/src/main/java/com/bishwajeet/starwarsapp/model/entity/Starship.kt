@@ -1,29 +1,44 @@
 package com.bishwajeet.starwarsapp.model.entity
 
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
-@Entity(tableName = "table_starship")
+@JsonClass(generateAdapter = true)
 data class Starship(
-
-    @PrimaryKey
-    @ColumnInfo(name = "starship_id")
-    val url: String,
-
-    val name: String,
-    val model: String,
-    val manufacturer: String,
-    val cost_in_credits: String,
-    val length: String,
-    val max_atmosphering_speed: String,
-    val crew: String,
-    val passengers: String,
-    val cargo_capacity: String,
-    val consumables: String,
-    val hyperdrive_rating: String,
-    val MGLT: String,
-    val starship_class: String,
-    val created: String,
-    val edited: String
+    @Json(name = "name")
+    val name: String = "",
+    @Json(name = "model")
+    val model: String = "",
+    @Json(name = "manufacturer")
+    val manufacturer: String = "",
+    @Json(name = "cost_in_credits")
+    val costInCredits: String = "",
+    @Json(name = "length")
+    val length: String = "",
+    @Json(name = "max_atmosphering_speed")
+    val maxAtmospheringSpeed: String = "",
+    @Json(name = "crew")
+    val crew: String = "",
+    @Json(name = "passengers")
+    val passengers: String = "",
+    @Json(name = "cargo_capacity")
+    val cargoCapacity: String = "",
+    @Json(name = "consumables")
+    val consumables: String = "",
+    @Json(name = "hyperdrive_rating")
+    val hyperdriveRating: String = "",
+    @Json(name = "MGLT")
+    val mGLT: String = "",
+    @Json(name = "starship_class")
+    val starshipClass: String = "",
+    @Json(name = "pilots")
+    val pilots: List<String> = listOf(),
+    @Json(name = "films")
+    val films: List<String> = listOf(),
+    @Json(name = "created")
+    val created: String = "",
+    @Json(name = "edited")
+    val edited: String = "",
+    @Json(name = "url")
+    val url: String = ""
 )
