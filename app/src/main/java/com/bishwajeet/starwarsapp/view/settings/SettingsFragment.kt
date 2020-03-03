@@ -1,6 +1,7 @@
 package com.bishwajeet.starwarsapp.view.settings
 
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -68,6 +69,7 @@ class SettingsFragment : Fragment() {
     }
 
 
+    @SuppressLint("InflateParams")
     private fun openDialog() {
 
         val names = arrayOf(
@@ -77,7 +79,7 @@ class SettingsFragment : Fragment() {
         )
 
         val alertDialog = AlertDialog.Builder(requireContext())
-        val rowList = layoutInflater.inflate(R.layout.dialog_theme_picker, null)
+        val rowList = layoutInflater.inflate(R.layout.dialog_theme_picker, null)// Acceptable for dialogs as they do not have root container
 
         val listView: ListView = rowList.findViewById(R.id.listView)
         val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, names)
